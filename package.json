@@ -1,0 +1,22 @@
+{
+  "name": "proj01",
+  "version": "1.0.0",
+  "description": "A Rest Api using Node and Express ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Rest",
+    "Api",
+    "RestApi",
+    "JavaScipt",
+    "Node",
+    "JS"
+  ],
+  "author": "Ryn R. C.",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
