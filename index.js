@@ -1,11 +1,6 @@
-const  express = require('express')
-const consign = require('consign')
+const customExpress = require('./config/customExpress.js')
 
-const app = express()
-
-consign()
-    .include('controllers') //import all controller which is in cotrollers folder
-    .into(app) //imports to app
+const app = customExpress()
 
 app.listen(3000, () => {
     console.log("Working the server in the 3000 gate")})
