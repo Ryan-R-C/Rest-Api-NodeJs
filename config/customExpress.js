@@ -6,7 +6,7 @@ module.exports = () => {
     const app = express()
     
     consign()
-        .include('controllers') //import all controller which is in cotrollers folder
+        .include('controllers') //import all controllers which is in cotrollers folder
         .into(app) //imports to app
     
     return app

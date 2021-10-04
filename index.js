@@ -1,3 +1,8 @@
+/*Each file has its specific reason:
+    index: to server
+    CustomExpress: configurate the express, each modification in express will be presented in this file
+    services: manage the app's routes, what to do when its "get"
+    */
 const customExpress = require('./config/customExpress.js')
 
 const app = customExpress()
