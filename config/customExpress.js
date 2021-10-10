@@ -6,8 +6,9 @@ module.exports = () => {
 
     const app = express()
 
+    app.use(bodyParser.json())//all body(data types are JSON) 
     app.use(bodyParser.urlencoded({extended: true}))//It could read many types of data as .json()
-    app.use(bodyParser.json())//
+
     consign()
         .include('controllers') //import all controllers which is in cotrollers folder
         .into(app) //imports to app
