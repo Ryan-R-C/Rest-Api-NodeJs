@@ -13,13 +13,15 @@ connection.connect(error => {
     }
     else{
         console.log('connection done!')
+        
+        const app = customExpress()
+
+        app.listen(3000, () => {
+            console.log("Working the server in the 3000 gate")})
+
     }
 })
 
-const app = customExpress()
-
-app.listen(3000, () => {
-    console.log("Working the server in the 3000 gate")})
 
 app.get('/', (req, res) => {
     res.send('Runing the server, allright!  👍')
