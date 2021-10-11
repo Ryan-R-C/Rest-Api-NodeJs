@@ -21,6 +21,7 @@
     - `npm install consign`
     - `npm install body-parser`
     - `npm install moment`
+    - `npm install mysql`
   - After that just enter:
     - `npm start`
  
