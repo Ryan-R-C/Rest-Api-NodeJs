@@ -6,7 +6,7 @@ module.exports = () => {
 
     const app = express()
 
-    app.use(bodyParser.json())//all body(data types are JSON) 
+    app.use(bodyParser.json())//all body(data types)  
     app.use(bodyParser.urlencoded({extended: true}))//It could read many types of data as .json()
 
     consign()

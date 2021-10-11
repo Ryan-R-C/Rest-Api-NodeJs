@@ -6,6 +6,8 @@
    
 const customExpress = require('./config/customExpress.js')
 
+const connection = require('./infrastructure/connection')//requires the connection with mysql
+
 const app = customExpress()
 
 app.listen(3000, () => {
