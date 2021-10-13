@@ -1,4 +1,5 @@
 //Recevies the app from index
+const Services = require('../models/services')//Require the Sevices class from the models
 module.exports = app => {
     app.get('/services', (req, res) => res.send('You are on services route! 😊'))
     

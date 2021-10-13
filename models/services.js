@@ -10,10 +10,11 @@ class Services{
             if(error){
                 console.log(error)
             }
-            else{
+            else{ 
                 console.log(results)
             }
         })
 
     }
 }
+module.exports = new Services
