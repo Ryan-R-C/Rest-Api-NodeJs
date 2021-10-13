@@ -10,6 +10,8 @@ const connection = require('./infrastructure/connection')//requires the connecti
 
 const Tables = require('./infrastructure/Tables')
 
+const app = customExpress()
+
 connection.connect(error => {
     if(error){
         console.log(error)
