@@ -1,3 +1,4 @@
+const moment = require('moment')
 
 //In this models will send to data to databse
 const connection = require('../infrastructure/connection')
@@ -5,29 +6,31 @@ const connection = require('../infrastructure/connection')
 
 class Services{
     add(service, res){
-        const date = moment().format('YYYY-MM-DD hh:mm:ss'); //used to format the moment that the user create the data | On MYSQL date format
-        dateCreation = moment(service.dateCreation, 'DD/MM/YYYY').format('YYYY-MM-DD hh:mm:ss')//THE second param in moment is just for dev porpouses.
+        const dateCreation = moment().format('YYYY-MM-DD hh:mm:ss'); //used to format the moment that the user create the data | On MYSQL date format
+        const date = moment(service.date,  'DD/MM/YYYY').format('YYYY-MM-DD hh:mm:ss')//THE second param in moment is just for dev porpouses.
         //instead of change this object it will be created a new object:
 
-        isValidDate = moment(data).isSameOrAfter(dateCreation)
-        isValidClient = service.client.lenght >= 4
+        // isValidDate = moment(date).isSameOrAfter(dateCreation)
+        // isValidClient = service.client.lenght >= 4
 
-        const validation = [
-            {
-                name: 'date',
-                valid: isValidDate,
-                msg: 'date must be equal or greater than actual date'
-            },
-            {
-                name: 'client name',
-                valid: isValidClient,
-                msg: "client's name must have at least 4 letters"
+        // const validations = [
+        //     {
+        //         name: 'date',
+        //         valid: isValidDate,
+        //         msg: 'date must be equal or greater than actual date'
+        //     },
+        //     {
+        //         name: 'client name',
+        //         valid: isValidClient,
+        //         msg: "client's name must have at least 4 letters"
 
-            }
+        //     }
 
-        ]
+        // ]
 
-        
+        // const errors = validations.filter(
+        //     element => element.valid
+        // )
         const ServiceDated = {...service, date,dateCreation} 
         
 

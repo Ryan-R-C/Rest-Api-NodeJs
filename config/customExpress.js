@@ -1,7 +1,6 @@
 const  express = require('express')
 const consign = require('consign')
 const bodyParser = require('body-parser')//treat the content that will be send for the API
-const moment= require('moment')
 
 
 
