@@ -8,6 +8,26 @@ class Services{
         const date = moment().format('YYYY-MM-DD hh:mm:ss'); //used to format the moment that the user create the data | On MYSQL date format
         dateCreation = moment(service.dateCreation, 'DD/MM/YYYY').format('YYYY-MM-DD hh:mm:ss')//THE second param in moment is just for dev porpouses.
         //instead of change this object it will be created a new object:
+
+        isValidDate = moment(data).isSameOrAfter(dateCreation)
+        isValidClient = service.client.lenght >= 4
+
+        const validation = [
+            {
+                name: 'date',
+                valid: isValidDate,
+                msg: 'date must be equal or greater than actual date'
+            },
+            {
+                name: 'client name',
+                valid: isValidClient,
+                msg: "client's name must have at least 4 letters"
+
+            }
+
+        ]
+
+        
         const ServiceDated = {...service, date,dateCreation} 
         
 
