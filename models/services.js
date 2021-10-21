@@ -10,41 +10,49 @@ class Services{
         const date = moment(service.date,  'DD/MM/YYYY').format('YYYY-MM-DD hh:mm:ss')//THE second param in moment is just for dev porpouses.
         //instead of change this object it will be created a new object:
 
-        // isValidDate = moment(date).isSameOrAfter(dateCreation)
-        // isValidClient = service.client.lenght >= 4
+         const isValidDate = moment(date).isSameOrAfter(dateCreation)
+         const isValidClient = service.client.lenght >= 4
 
-        // const validations = [
-        //     {
-        //         name: 'date',
-        //         valid: isValidDate,
-        //         msg: 'date must be equal or greater than actual date'
-        //     },
-        //     {
-        //         name: 'client name',
-        //         valid: isValidClient,
-        //         msg: "client's name must have at least 4 letters"
+         const validations = [
+             {
+                 name: 'date',
+                 valid: isValidDate,
+                 msg: 'date must be equal or greater than actual date'
+             },
+             {
+                 name: 'client name',
+                 valid: isValidClient,
+                 msg: "client's name must have at least 4 letters"
 
-        //     }
+             }
 
-        // ]
+         ]
 
-        // const errors = validations.filter(
-        //     element => element.valid
-        // )
-        const ServiceDated = {...service, date,dateCreation} 
+        const errors = validations.filter(
+             element => !element.valid
+         )
+        const isThereErrors = errors.length  
+        if(isThereErrors){
+            res.status(400).json
+            
+        }
+        else{// it will try to creat it just if the validation is ok
+            res.status(200).json(results)
+            const ServiceDated = {...service, date,dateCreation} 
         
+            const sql = `INSERT INTO Services SET ?`
+            //In query: sql config, the object that is  beeing saved, error and results
+            connection.query(sql, ServiceDated, (error,     results) =>{
+                if(error){
+                    res.status(400).json(error)
+                }
+                else{ 
+                    res.status(201).json(results)
+                }
+            })
 
-        const sql = `INSERT INTO Services SET ?`
-        //In query: sql config, the object that is beeing saved, error and results
-        connection.query(sql, ServiceDated, (error, results) =>{
-            if(error){
-                res.status(400).json(error)
             }
-            else{ 
-                res.status(201).json(results)
-            }
-        })
-
+        
     }
 }
 module.exports = new Services
