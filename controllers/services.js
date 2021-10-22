@@ -4,7 +4,10 @@ module.exports = app => {
     app.get('/services', (req, res) => {
         Services.toList(res)
     })
-
+    app.get('/services:id', (req, res) => {
+        const id = parseInt(req.params)
+        Services.lookforId(id, res)
+    })
     //Now instead of send data this function will ask for data
     app.post('/services', (req, res) => {
         //before send a res to client it is necessary to see what is happening with the req
