@@ -4,7 +4,7 @@ module.exports = app => {
     app.get('/services', (req, res) => {
         Services.toList(res)
     })
-    app.get('/services/:id', (req, res) => {
+    app.get('/services/:id', (req, res) => {//gets the id throught the passed id
         const id = parseInt(req.params.id)
         Services.lookforId(id, res)
     })

@@ -29,7 +29,7 @@ class Services{
          ]
 
         const errors = validations.filter(
-             element => !element.valid
+            element => !element.valid
          )
         const isThereErrors = errors.length  
         if(isThereErrors){
@@ -75,6 +75,22 @@ class Services{
                 res.status(200).json(...results)
             }
         } )
+    }
+    changeDatabase(id, values, res){
+        if(values.date){
+            values.date = moment(values.date,  'DD/MM/YYYY').format('YYYY-MM-DD hh:mm:ss')//THE second param in moment is just for dev porpouses.
+        }
+        console.log(values)
+        const sql = `UPDATE Services SET ? WHERE id=${id}`
+        connection.query(sql, [values, id], (error, results) =>{
+            if(error){
+                res.status(400).json(error)
+            }
+            else{ 
+                res.status(201).json(results)
+            }
+        })
+
     }
 }
 module.exports = new Services
