@@ -8,6 +8,13 @@ module.exports = app => {
         const id = parseInt(req.params.id)
         Services.lookforId(id, res)
     })
+    //Now is necessary to change the database, PUT or Pacth? Put <- change all elements X , Patch <- change just one field V
+    app.patch('/services/:id',  (req, res) => {
+        //gets the id throught the passed id
+        const id = parseInt(req.params.id)
+        const values = req.body// in this case the values to be changed will be send trought body
+        Services.changeDatabase (id, values ,res)
+    })
     //Now instead of send data this function will ask for data
     app.post('/services', (req, res) => {
         //before send a res to client it is necessary to see what is happening with the req
