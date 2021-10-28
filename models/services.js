@@ -72,7 +72,7 @@ class Services{
                 res.status(400).json(error)
             }
             else{
-                res.status(200).json(...results)
+                res.status(200).json({id})
             }
         } )
     }
@@ -92,5 +92,15 @@ class Services{
         })
 
     }
+    deleteRow(id, res){
+        const sql = `DELETE FROM SERVICES WHERE id=?`;
+        connection.query(sql, id, (error, results) => {
+            if(error){
+                res.status(400).json(error)
+            }
+            else{ 
+                res.status(200).json(results)
+            }
+        }
 }
 module.exports = new Services

@@ -21,7 +21,7 @@ module.exports = app => {
         const service = req.body
         Services.add(service, res)
         /*If just console.log(req.body), it will be returned undefined. It must be treated, so body-parser is necessary*/
-
     //For for test this, visually it gonna be used POSTMAN
-    })    
+    })
+    
 }
