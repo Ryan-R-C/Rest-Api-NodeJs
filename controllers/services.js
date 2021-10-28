@@ -23,5 +23,8 @@ module.exports = app => {
         /*If just console.log(req.body), it will be returned undefined. It must be treated, so body-parser is necessary*/
     //For for test this, visually it gonna be used POSTMAN
     })
-    
+    app.delete('/services:/id', (req, res) => {
+        const id = parseInt(req.params.id)
+        Services.deleteRow(id, res)
+        })    
 }

@@ -101,6 +101,7 @@ class Services{
             else{ 
                 res.status(200).json(results)
             }
-        }
+        })
+    }
 }
 module.exports = new Services
