@@ -1,6 +1,6 @@
 # `REST API using NodeJs`
 
-## A Note/Task Manager using `React`
+## Rest API + NodeJS + MySQL = 🏆 💻 🏆
 
 ### In this project:
 
@@ -24,5 +24,6 @@
     - `npm install mysql`
   - After that just enter:
     - `npm start`
- 
+  - And run MySQL:
+    - It can be with [`Wamp Server`](https://www.wampserver.com/en/) or [`XAMPP`](https://www.apachefriends.org/pt_br/index.html) as your choice 
 And enjoy! 😉
