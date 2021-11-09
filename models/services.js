@@ -1,3 +1,12 @@
+/*|=======================================|
+  |                                       |
+  |Reponsible to communicate with database|
+  |                                       |  
+  |=======================================|
+                                           */
+
+
+
 const moment = require('moment')
 
 //In this models will send to data to databse
