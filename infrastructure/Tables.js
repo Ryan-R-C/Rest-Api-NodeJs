@@ -1,3 +1,9 @@
+/*|===================================================|
+  |                                                   |
+  |Reponsible create the database if it does not exits|
+  |                                                   |  
+  |===================================================|
+                                           */
 class Tables{
     init(connection){//receving the connection
         this.connection = connection
