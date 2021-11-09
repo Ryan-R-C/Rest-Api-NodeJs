@@ -1,3 +1,10 @@
+/*|============================================================|
+  |                                                            |
+  |Reponsible to require and give it the configuration database|
+  |                                                            |  
+  |============================================================|
+                                           */
+
 const mysql = require('mysql')
 const connection = mysql.createConnection({
     //Into this method is necessary to enter a object with the config
