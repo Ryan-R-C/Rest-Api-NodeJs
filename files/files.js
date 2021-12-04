@@ -4,8 +4,19 @@ Now it is necessary to handle images
 
 make a upload of image through a buffer
 */
-fs.readFile('../assets/', (error, buffer) => {
-    
+fs.readFile('../assets/thumbsUp.bmp', (error, buffer) => {
+    console.log('Redered Image 👍');
+    console.log(buffer);
+
+    /*
+    writes a file
+     path
+     write options, what will write
+     callBack Function
+    */
+    fs.writeFile('../assets/thumbsUp2.bmp', buffer, (error)=>{
+        console.log('Image was wrote')
+    } )
 } )
 /*
 fs.readFile ->
